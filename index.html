@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Of DOM</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .fruits_container li{
+            color: tomato;
+        }
+        .places{
+            color:blueviolet;
+             
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to my DOM</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique commodi ducimus quae unde eum, perferendis ipsum corrupti ratione veniam distinctio adipisci fugiat officiis asperiores nam earum iusto architecto expedita possimus maiores! Nobis laudantium aliquid sit fugiat similique, maxime repellat repellendus reprehenderit cumque alias quasi, error corporis dicta, quibusdam vero veritatis.</p>
+    </header>
+    <main id="main_container">
+        <section id="dom_container" class="dom large-text">
+            <h1>My awasome DOM</h1>
+        <ul>
+            <li>Jalali Set</li>
+            <li>Shafayet</li>
+            <li>Bonobash</li>
+            <li>Bonobash</li>
+        </ul>
+        </section>
+       <section class="fruits_container">
+        <h1 id= "Fruits-title" class="some class random blue-bg" >Fruits,I like:</h1>
+        <ul>
+          
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Orange</li>
+            <li>Mango</li>
+           
+        </ul>
+       </section>
+       <section class="visit_container">
+        <h1>Place, I like to visit</h1>
+        <ul id="place_list">
+            <!-- ctrl+Alt+down arrow dile multipul select kore ek sathe likha jai  -->
+            
+            <li class="places">Dhaka</li>
+            <li class="places">Rajshahi</li>
+            <li class="places">Naogaon</li>
+            <li>Sylhet</li>
+        </ul>
+       </section>
+    </main>
+    <!-- javascript add kora jai 2 vabe[1.internal,2 external] -->
+    <!-- external vabe javascript file connection -->
+    <!-- j script tag aage thakbe seta aage priority pabe  mane order maintain kore javascript  -->
+    <script src="js/append.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/style_inJs.js"></script>
+  <!--------------------------------------------------- -->
+    
+    <!-- html er sathe javascript connection[internal]  -->
+    <script>
+    //HTMLCollection vs NodeList
+    //HTMLCollection:livelink [use for of]
+    //NodeList:static [use for of][use for each] [use querySelectorAll]
+    //5 vabe dom theke select korte pari....
+    //dynamic vabe add
+    //option-1
+    // getElementsByTagName=ei website e joto tag name thakbe oi tag name likhle oi nam er sob tag show korbe...mane li jodi likhi tahole oi page e joto li thakbe sobgula show korbe
+    //output hisebe html collection dibe
+    //const liCollection=document.getElementsByTagName('li');
+    //console.log(liCollection);
+    // for(const li of liCollection){
+    //     console.log(li.innerText);
+    // }
+    //const allHeadings=document.getElementsByTagName('h1');
+    //console.log(allHeadings);
+    // for(const h1 of allHeadings){
+    //     //console.log(h1.innerText);
+    // }
+    //option-2
+    // kono ekta specific element k proijon hoi tahole oitar moddhe ekta id boshate hobe...
+    // then document.getElementById 
+    //getElementById use korbo jokhn particular vabe kono kichu bujhabe............oi nam er kichu na thakle null show korbe
+    //const specificHeading=document.getElementById('Fruits-title');
+    //console.log(specificHeading);//Output:<h1 id="Fruits-title">Fruits,I like:</h1> [document]
+    //console.log(specificHeading.innerText='My fruits');//change text
+    //option-3
+    //jokhn multiple vabe kichu bujhabe tokhn use korbo....oi nam er kichu na thakle ekta empty array dibe....HTMLcollection []
+    // const multiClass=document.getElementsByClassName('places');
+    // console.log(multiClass);//Output:HTMLCollection(3) [li.places, li.places, li.places]
+    // for(const clas of multiClass){
+    //     console.log(clas.innerText);
+    // }
+    //option-4,5-NodeList
+    //option-4
+    //query selector : querySelectorAll....ekhetre sudu id nam dile dibena symbol ta o dite hoi....[node list dibe]
+    // const some_li=document.querySelectorAll('.fruits_container li');
+    // console.log(some_li);
+    // for(const li of some_li){
+    //    console.log(li);
+    // }
+
+    //option-5: sudu querySelector use korle single vabe ekta jinis sudu show korbe mane 1st ta sudu [will return 1st one]
+    //const some =document.querySelector('.fruits_container li');//ekhetre sudu 1st li tai show korbe 
+    // console.log(some.innerText);
+
+
+    //get attributes
+    //const title=document.getElementById('Fruits-title');
+    // title.getAttribute('id');
+
+
+    // const title=document.getElementById('some class random blue-bg');
+    // const ttl=title.getAttribute('class')
+    // console.log(ttl);
+
+</script>
+</body>
+</html>
